@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your Name · Theoretical Physics</title>
+<style>
+:root{
+  --bg:#f7f6f2;--surface:#ffffff;--text:#1d2330;--muted:#5d6577;--accent:#1f3a5f;--accent2:#b5651d;--line:#dcd9d0;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#12151c;--surface:#1a1f2a;--text:#e6e8ee;--muted:#9aa3b5;--accent:#8fb4ee;--accent2:#e0a56b;--line:#2b3242;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#12151c;--surface:#1a1f2a;--text:#e6e8ee;--muted:#9aa3b5;--accent:#8fb4ee;--accent2:#e0a56b;--line:#2b3242;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 Georgia,"Iowan Old Style","Times New Roman",serif}
+a{color:var(--accent);text-decoration-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+a:hover{text-decoration-color:var(--accent)}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh}
+aside{position:sticky;top:0;align-self:start;height:100vh;padding:48px 28px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:28px}
+.avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:#fff;font:600 40px/1 system-ui,sans-serif;letter-spacing:.02em}
+.name{font:600 26px/1.2 Georgia,serif;margin:0}
+.tag{margin:6px 0 0;color:var(--muted);font:14px/1.5 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+nav a{display:block;padding:7px 12px;border-radius:8px;text-decoration:none;color:var(--muted);font:15px system-ui,sans-serif}
+nav a:hover{background:var(--surface);color:var(--text)}
+nav a.on{background:var(--surface);color:var(--accent);font-weight:600;box-shadow:inset 3px 0 0 var(--accent2)}
+main{padding:0 56px 80px;max-width:900px}
+section{padding:56px 0 24px;border-bottom:1px solid var(--line)}
+section:last-child{border-bottom:0}
+h2{font:600 30px/1.2 Georgia,serif;margin:0 0 20px;color:var(--accent)}
+h3{font:600 18px/1.3 system-ui,sans-serif;margin:0 0 6px}
+p{margin:0 0 14px}
+.lead{font-size:20px}
+.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:8px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.card p{margin:0;font-size:15.5px;color:var(--muted)}
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 18px 20px}
+.tl li::before{content:"";position:absolute;left:-7px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--accent2)}
+.tl b{font-family:system-ui,sans-serif}
+.when{display:block;color:var(--muted);font:13px system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase}
+ul.plain{margin:0 0 16px;padding-left:20px}
+ul.plain li{margin-bottom:6px}
+.btn{display:inline-block;padding:10px 18px;border-radius:999px;background:var(--accent);color:var(--bg);text-decoration:none;font:600 15px system-ui,sans-serif;margin:0 8px 8px 0}
+.btn.alt{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.pub{padding:10px 0;border-bottom:1px dashed var(--line);font-size:16px}
+.pub:last-child{border-bottom:0}
+footer{padding:28px 0 0;color:var(--muted);font:13px system-ui,sans-serif}
+.toggle{margin-top:auto;background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:7px 10px;font:13px system-ui,sans-serif;cursor:pointer}
+@media (max-width:820px){
+  .layout{display:block}
+  aside{position:sticky;top:0;z-index:5;height:auto;flex-direction:row;align-items:center;gap:12px;padding:10px 14px;padding-top:calc(env(safe-area-inset-top,0px) + 10px);background:var(--bg);border-right:0;border-bottom:1px solid var(--line);overflow-x:auto}
+  :root{padding-top:0}
+  .avatar,.tag,.toggle{display:none}
+  .name{font-size:18px;white-space:nowrap}
+  nav ul{flex-direction:row}
+  nav a{white-space:nowrap;padding:6px 10px}
+  main{padding:0 20px 60px}
+  h2{font-size:26px}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>
+  <div class="avatar" aria-hidden="true">YN</div>
+  <div><h1 class="name">Your Name</h1><p class="tag">Particles ◆ Fields ◆ Dark Matter</p></div>
+  <nav aria-label="Sections"><ul>
+    <li><a href="#home" class="on">Intro</a></li>
+    <li><a href="#bio">Biography</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul></nav>
+  <button class="toggle" id="theme" type="button">Toggle theme</button>
+</aside>
+
+<main>
+<section id="home">
+  <h2>Hello, I’m Your Name</h2>
+  <p class="lead">I am a [position] in the [Department] at [Institution], since [Month YYYY].</p>
+  <p>I study physics beyond the Standard Model using quantum field theory and effective field theory, with a particular focus on [scalar sectors, loop-level calculations, and dark matter]. Replace this paragraph with a two or three sentence summary of your work.</p>
+  <p>I am looking for motivated PhD, Master’s and senior undergraduate students to join my group. Please reach out if my work resonates with you.</p>
+  <a class="btn" href="#publications">Publications</a><a class="btn alt" href="#contact">Get in touch</a>
+</section>
+
+<section id="bio">
+  <h2>Biography</h2>
+  <p>A short, first-person paragraph on your academic journey: where you trained, what shaped your interests, and where you are headed.</p>
+  <ul class="tl">
+    <li><span class="when">Mon YYYY – present</span><b>[Position]</b>, [Department], [Institution]</li>
+    <li><span class="when">Mon YYYY – Mon YYYY</span><b>Postdoctoral Research Fellow</b>, [Institute], mentored by Prof. [Name]</li>
+    <li><span class="when">Mon YYYY</span><b>Ph.D.</b> in [Subject], [University], advised by Prof. [Name]</li>
+    <li><span class="when">Mon YYYY</span><b>[Master’s / Bachelor’s]</b> in [Subject], [University]</li>
+  </ul>
+</section>
+
+<section id="research">
+  <h2>Research</h2>
+  <div class="grid">
+    <div class="card"><h3>Beyond-Standard-Model Phenomenology</h3><p>One or two sentences on the models you build and the signatures you compute. Add links to key papers.</p></div>
+    <div class="card"><h3>Quantum Field Theory &amp; EFT</h3><p>Describe your loop-level and effective field theory methods, and the questions they let you answer.</p></div>
+    <div class="card"><h3>Dark Matter</h3><p>Summarize your approach to dark matter candidates, constraints and experimental connections.</p></div>
+    <div class="card"><h3>Add another topic</h3><p>Copy this card for each research direction you want to feature.</p></div>
+  </div>
+</section>
+
+<section id="teaching">
+  <h2>Teaching</h2>
+  <h3>As faculty at [Institution]</h3>
+  <ul class="plain">
+    <li><b>Semester YYYY:</b> <i>Course Title (Course Code)</i>, for [level] students.</li>
+    <li><b>Semester YYYY:</b> <i>Course Title.</i></li>
+  </ul>
+  <h3>As postdoctoral fellow / teaching assistant</h3>
+  <ul class="plain">
+    <li><b>Workshop or School YYYY:</b> Lecture and tutorial on <i>Topic</i>.</li>
+    <li><b>Semester YYYY:</b> Teaching assistant, <i>Course Title</i>, [Institution].</li>
+  </ul>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+  <p>
+    <a class="btn" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+    <a class="btn alt" href="https://inspirehep.net/" target="_blank" rel="noopener">INSPIRE</a>
+    <a class="btn alt" href="https://arxiv.org/" target="_blank" rel="noopener">arXiv</a>
+  </p>
+  <div class="pub">Author A, <b>Your Name</b>, Author C, “Title of paper,” <i>Journal</i> <b>Vol</b>, Page (YYYY), arXiv:XXXX.XXXXX.</div>
+  <div class="pub">Author A, <b>Your Name</b>, “Title of paper,” arXiv:XXXX.XXXXX.</div>
+</section>
+
+<section id="team">
+  <h2>Team</h2>
+  <h3>Students</h3>
+  <ul class="plain">
+    <li><b>Student Name</b> (Ph.D. / Master’s, YYYY–present): project topic, jointly supervised with Dr. [Name].</li>
+  </ul>
+  <h3>Collaborators</h3>
+  <ul class="plain"><li><b>Collaborator Name</b>, Institution.</li></ul>
+</section>
+
+<section id="cv">
+  <h2>Curriculum Vitae</h2>
+  <p>Download the latest version of my CV.</p>
+  <a class="btn" href="cv.pdf">Download CV (PDF)</a>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p><a href="mailto:email@institution.edu">email@institution.edu</a></p>
+  <p class="muted">Department of [Department], Office [Room]<br>[Institution], [City], [Country] [Postal code]</p>
+  <footer>© Your Name ◆ Replace placeholders in square brackets with your own details.</footer>
+</section>
+</main>
+</div>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav a'));
+  links.forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(a.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+  document.querySelectorAll('.btn[href^="#"]').forEach(function(b){
+    b.addEventListener('click',function(e){
+      var t=document.querySelector(b.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id);});
+        }
+      });
+    },{rootMargin:'-35% 0px -60% 0px'});
+    document.querySelectorAll('section').forEach(function(s){io.observe(s);});
+  }
+  var root=document.documentElement;
+  document.getElementById('theme').addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+    root.setAttribute('data-theme',dark?'light':'dark');
+  });
+})();
+</script>
+</body>
+</html>
