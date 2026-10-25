@@ -1,36 +1,31 @@
 SOUMYADIP KUNDU - MULTI-PAGE ACADEMIC WEBSITE
 
-All files in this ZIP are intended to be uploaded together to the ROOT of your GitHub repository. They are kept at one level to make upload through the GitHub website easier.
+Upload all files in this package together to the ROOT of your GitHub repository.
 
 FILES
 - index.html              Homepage
-- journey.html            Academic journey timeline
+- biography.html          Brief biography (replaces the academic-journey page)
+- journey.html            Redirect to biography.html for old links
 - research.html           Research interests
-- publications.html       Publications and arXiv preprints
-- travel.html             Photos & travel gallery
-- cv.html                 CV download and academic profiles
-- site.css                Shared website styling and navigation effects
-- site.js                 Mobile menu, current-page highlight, CV link check
+- publications.html       Separate publications and arXiv preprints page
+- travel.html             Photos & travel gallery (illustrated placeholders until personal photos are added)
+- cv.html                 CV download and contact details
+- cv.pdf                  Downloadable academic CV
+- site.css                Shared styling, backgrounds, hover effects and transitions
+- site.js                 Mobile navigation and current-page highlight
 - particle-physics-bg.webp Homepage background image
 
-HOW TO PUBLISH ON GITHUB PAGES
-1. Download this ZIP and double-click it to extract.
+PUBLISH ON GITHUB PAGES
+1. Extract this ZIP on your computer.
 2. Open https://github.com/Dipsym/lampane
-3. Choose Add file -> Upload files. Select all six HTML files plus site.css, site.js, and particle-physics-bg.webp from the extracted folder. Upload them directly to the repository root (do not upload the ZIP itself).
-4. Commit changes and wait for GitHub Pages to deploy. Then open https://dipsym.github.io/lampane/ and refresh with Cmd+Shift+R.
-5. Do not delete or rename site.css, site.js, or particle-physics-bg.webp: the pages depend on them.
+3. Choose Add file -> Upload files. Select all files listed above and upload them directly to the repository root (do not upload the ZIP itself).
+4. Commit changes and wait for GitHub Pages to deploy.
+5. Open https://dipsym.github.io/lampane/ and refresh with Cmd+Shift+R.
 
-CV PDF
-Upload your real CV PDF into the repository root as cv.pdf. The CV & Contact page only displays the download button once the file exists. The PDF is not included because no CV was attached.
+The old SK / Soumyadip Kundu header brand has been removed. The top navigation is now centered on desktop and uses the mobile menu on smaller screens. The biography is a concise prose page rather than a timeline. Publications has its own page. The CV PDF is linked directly as cv.pdf.
 
-PERSONAL TRAVEL PHOTOS
-No personal photographs were provided, so travel.html currently uses illustrated placeholder panels, clearly labelled as placeholders. When you have photos ready, upload them to a photos folder and replace the illustrated gallery panels in travel.html with <img src="photos/your-file.jpg" alt="A brief description"> plus a caption. Add locations/dates only if accurate.
+CV NOTE
+The PDF uses the education, publications, teaching, mentoring, talks/posters, conferences/workshops, awards, skills, extracurricular activity and referee details supplied by Soumyadip. The placeholder second conference-proceedings entry was excluded because it contains generic placeholder authors/title. The Quantum Mechanics II course is listed without an unconfirmed course code. The website URL was updated to https://dipsym.github.io/lampane/.
 
-ACADEMIC JOURNEY
-The confirmed PhD timeline is 2023-present at IISER Thiruvananthapuram, School of Physics, supervised by Dr. Tanumoy Mandal. Earlier study periods (M.Sc. 2021-2023 and undergraduate study 2018-2021) are included without unconfirmed institution names. Update journey.html with exact degree titles/institutions if desired.
-
-PUBLICATIONS
-- arXiv:2610.21751 (2026)
-- arXiv:2606.14303 (2026)
-- arXiv:2408.11798 (published as Phys. Rev. D 111, 015045 (2025))
-The papers page links to each arXiv record/PDF and the INSPIRE profile.
+PERSONAL PHOTOS
+The current gallery uses clearly labelled illustrated panels. Upload your own photographs into a photos/ folder and update travel.html when ready.
